@@ -38,7 +38,7 @@
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
 </datatypes><table x="423" y="693" name="레시피 기본 정보">
-<row name="레시피 번호" null="1" autoincrement="1">
+<row name="레시피ID" null="1" autoincrement="1">
 <datatype>INTEGER(100)</datatype>
 <default>NULL</default><comment>레시피 고유 번호</comment>
 </row>
@@ -64,42 +64,14 @@
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>레시피 번호</part>
+<part>레시피ID</part>
 </key>
 </table>
-<table x="119" y="445" name="회원">
-<row name="이름" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="아이디" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default><comment>회원 아이디</comment>
-</row>
-<row name="비밀번호" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default><comment>영어, 숫자 혼합하여 8자 미만</comment>
-</row>
-<row name="스크랩한 레시피 번호" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="알러지 필터" null="1" autoincrement="0">
-<datatype>VARCHAR</datatype>
-<default>NULL</default></row>
-<row name="작성했던 후기" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="내 냉장고" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="알러지 필터">
-</key>
-<key type="PRIMARY" name="알러지 필터">
-</key>
-</table>
-<table x="397" y="447" name="알러지 정보">
+<table x="493" y="413" name="알러지 정보">
 <row name="알러지 필터" null="1" autoincrement="1">
-<datatype>VARCHAR</datatype>
-<default>NULL</default><comment>0 또는 1로 표시, 0은 on, 1은 off</comment>
+<datatype>VARCHAR(10)</datatype>
+<default>NULL</default><relation table="회원" row="알러지필터" />
+<comment>0 또는 1로 표시, 0은 on, 1은 off</comment>
 </row>
 <row name="계란" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
@@ -121,9 +93,9 @@
 <default>NULL</default></row>
 </table>
 <table x="710" y="694" name="레시피 재료 정보">
-<row name="레시피 번호" null="1" autoincrement="1">
+<row name="레시피ID" null="1" autoincrement="1">
 <datatype>INTEGER(100)</datatype>
-<default>NULL</default><relation table="레시피 기본 정보" row="레시피 번호" />
+<default>NULL</default><relation table="레시피 기본 정보" row="레시피ID" />
 </row>
 <row name="재료 이름" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
@@ -134,8 +106,11 @@
 <row name="재료 용량" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
+<row name="재료ID" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>레시피 번호</part>
+<part>레시피ID</part>
 </key>
 </table>
 <table x="130" y="669" name="레시피 카테고리">
@@ -182,10 +157,10 @@
 <part>알러지 음식 제외</part>
 </key>
 </table>
-<table x="713" y="838" name="레시피 과정 정보">
-<row name="레시피 번호" null="1" autoincrement="1">
+<table x="704" y="882" name="레시피 과정 정보">
+<row name="레시피ID" null="1" autoincrement="1">
 <datatype>INTEGER(100)</datatype>
-<default>NULL</default><relation table="레시피 기본 정보" row="레시피 번호" />
+<default>NULL</default><relation table="레시피 기본 정보" row="레시피ID" />
 </row>
 <row name="레시피 설명 번호" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
@@ -197,10 +172,10 @@
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>레시피 번호</part>
+<part>레시피ID</part>
 </key>
 </table>
-<table x="515" y="915" name="레시피 후기">
+<table x="319" y="906" name="레시피 후기">
 <row name="내용" null="1" autoincrement="1">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
@@ -209,6 +184,46 @@
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>내용</part>
+</key>
+</table>
+<table x="265" y="415.6363525390625" name="회원">
+<row name="알러지필터" null="1" autoincrement="1">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="이름" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="아이디" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="비밀번호" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="스크랩한 레시피" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="작성했던 후기" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="내 냉장고" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>알러지필터</part>
+</key>
+</table>
+<table x="45" y="408.5" name="내 냉장고">
+<row name="소비기한" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="재료 이름" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="재료ID" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>소비기한</part>
 </key>
 </table>
 </sql>
