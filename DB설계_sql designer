@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
 <!-- Active URL: https://sql.toad.cz/?keyword=default -->
-<sql>
+<sql>00
 <datatypes db="mysql">
 	<group label="Numeric" color="rgb(238,238,170)">
 		<type label="Integer" length="0" sql="INTEGER" quote=""/>
