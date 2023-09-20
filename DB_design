@@ -1,0 +1,48 @@
+create table my_refregirator( /*내 냉장고 테이블*/
+	user_id varchar(20) ,
+	fd_id varchar(20),
+	fd_name varchar(20),
+	fd_pic varchar(20),
+	fd_buy_date varchar(20),
+	fd_use_date varchar(20)
+) /*아이디, 재료ID, 재료명, 식재료사진, 구매날짜, 소비기한*/
+
+create table user_info( /*회원 정보 테이블*/
+	user_id varchar(20) not null primary key,
+	user_name varchar(20),
+	user_pass varchar(20),
+	user_scrap varchar(20),
+	user_RF varchar(20),
+	user_allergy varchar(20)
+) /*회원ID, 회원 이름, 비밀번호, 스크랩한 레시피, 내 냉장고, 알러지*/
+insert into user_info 
+values('hamstar', 'hamster', 'cute1004')
+
+
+create table recape_main_info( /*레시피 기본 정보 테이블*/
+	recipe_id varchar(20) primary key,
+	recipe_name varchar(20),
+	recipe_short varchar(20),
+	recipe_star varchar(20),
+	recipe_pic varchar(20),
+	recipe_scrap varchar(20),
+	recipe_category varchar(20),
+) /*레시피ID, 레시피 이름, 간단 소개, 별점, 레시피 사진, 즐겨찾기, 카테고리*/
+
+create table recipe_ig_info( /*레시피 재료 정보 테이블*/
+	recipe_id varchar(20),
+	fd_id varchar(20),
+	fd_name varchar (20),
+	fd_amount varchar(20),
+	recipe_detail_num int,
+	recipe_detail varchar(200)
+) /*레시피ID, 재료ID, 재료명, 재료 용량, 레시피 설명 번호, 설명*/
+
+create table recipe_review( /*레시피 후기 테이블*/
+	user_id varchar(20),
+	recipe_id varchar(20),
+	recipe_name varchar(20),
+	review_retail varchar(100),
+	review_star int,
+	review_date varchar(20)
+) /*회원ID, 레시피ID, 레시피 이름, 내용, 별점, 작성일자*/
