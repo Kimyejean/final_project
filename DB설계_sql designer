@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
-<!-- Active URL: https://sql.toad.cz/?keyword=default -->
+<!-- Active URL: https://sql.toad.cz/ -->
 <sql>
 <datatypes db="mysql">
 	<group label="Numeric" color="rgb(238,238,170)">
@@ -91,6 +91,9 @@
 </key>
 </table>
 <table x="871" y="688" name="레시피 후기">
+<row name="글번호" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
 <row name="아이디" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -156,6 +159,17 @@
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>소비기한</part>
+</key>
+</table>
+<table x="827.7142791748047" y="481.8571472167969" name="즐겨찾기">
+<row name="아이디" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="레시피 ID" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>아이디</part>
 </key>
 </table>
 </sql>
