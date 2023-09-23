@@ -260,7 +260,7 @@
             android:id="@+id/button16"
             android:layout_width="176dp"
             android:layout_height="56dp"
-            android:backgroundTint="#D5F466"
+            android:backgroundTint="#A8F279"
             android:text="검색하기"
             android:textColor="#858585"
             android:textSize="20sp"
