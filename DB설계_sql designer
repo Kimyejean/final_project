@@ -37,7 +37,7 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="424" y="680" name="레시피 기본 정보">
+</datatypes><table x="389" y="801" name="레시피 기본 정보">
 <row name="레시피ID" null="1" autoincrement="1">
 <datatype>INTEGER(100)</datatype>
 <default>NULL</default><comment>레시피 고유 번호</comment>
@@ -90,7 +90,7 @@
 <part>레시피ID</part>
 </key>
 </table>
-<table x="871" y="688" name="레시피 후기">
+<table x="871" y="673" name="레시피 후기">
 <row name="글번호" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -138,7 +138,7 @@
 <part>알러지</part>
 </key>
 </table>
-<table x="571" y="480" name="내 냉장고">
+<table x="639" y="475" name="내 냉장고">
 <row name="아이디" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
@@ -161,7 +161,7 @@
 <part>소비기한</part>
 </key>
 </table>
-<table x="827.7142791748047" y="481.8571472167969" name="즐겨찾기">
+<table x="827" y="481" name="즐겨찾기">
 <row name="아이디" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -170,6 +170,44 @@
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>아이디</part>
+</key>
+</table>
+<table x="474.8571472167969" y="481.1428527832031" name="알러지">
+<row name="알러지ID" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="계란" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="우유" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="밀" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="메밀" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="견과류" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="육류" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="생선" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="복숭아" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="새우" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="게" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>알러지ID</part>
 </key>
 </table>
 </sql>
